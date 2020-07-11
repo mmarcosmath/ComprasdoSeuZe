@@ -17,8 +17,13 @@ class _BuyingListState extends State<BuyingList> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Logo(),
-            BuyList(),
+            Logo(
+              buyingList: true,
+              ctx: context,
+            ),
+            BuyList(
+              buyingList: true,
+            ),
             Inputs(
               buyingList: true,
             ),

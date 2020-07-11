@@ -34,7 +34,7 @@ class _ListaComprasState extends State<ListaCompras> {
     setState(() {
       produtos.clear();
       for (var prod in listatemp) {
-        var p = Produto.fromJson(prod);
+        var p = Produto.fromMap(prod);
         produtos.insert(0, p);
       }
       calcTotal();

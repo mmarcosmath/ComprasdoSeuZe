@@ -11,6 +11,9 @@ class CustomTextFormField extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(5.0),
         child: TextFormField(
+          enableSuggestions: true,
+          autofillHints: ["Leite", "Café", "Açucar"],
+          autocorrect: true,
           controller: ctrl,
           keyboardType: TextInputType.text,
           cursorColor: Color(0xFF72DADD),
@@ -38,22 +41,25 @@ class CustomTextFormField extends StatelessWidget {
               color: Theme.of(context).primaryColor,
               fontSize: 15,
             ),
+
             contentPadding: EdgeInsets.all(8),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),
-            // filled: true,
-
-            // fillColor: Color(0xFF6886A0),
             labelStyle: TextStyle(
               color: Theme.of(context).primaryColor,
               fontSize: 15,
             ),
+
+            // labelStyle: TextStyle(
+            //   color: Theme.of(context).primaryColor,
+            //   fontSize: 15,
+            // ),
           ),
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 20,
             color: Theme.of(context).primaryColor,
+            fontSize: 20,
           ),
         ),
       ),

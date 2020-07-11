@@ -52,7 +52,7 @@ class Banco {
     return await db.execute('''DELETE FROM produto''');
   }
 
-    Future<void> deleteProd(String id) async {
+  Future<void> deleteProd(String id) async {
     Database db = await instance.database;
     return await db.execute('''DELETE FROM produto WHERE id = $id''');
   }
@@ -62,10 +62,10 @@ class Banco {
     return await db.query('produto');
   }
 
-    Future<Produto> getProduto(int id) async {
+  Future<Produto> getProduto(int id) async {
     Database db = await instance.database;
     var res = await db.rawQuery('SELECT FROM produto WHERE id = $id');
-    return Produto.fromJson(res.first);
+    return Produto.fromMap(res.first);
   }
 
   // Future<Livro> getLivro(int id) async {
