@@ -2,8 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:quitandadoseuze/pages/listadecompras.dart';
 import 'dart:async';
 
+import 'pages/comprasdoseuze_app.dart';
+
 void main() {
-  runApp(Inicial());
+  runApp(App());
+}
+
+class App extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: CompasdoSeuZeApp(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        backgroundColor: Color(0xFF31A2CE),
+        scaffoldBackgroundColor: Color(0xFFC9DAE2),
+        primaryColor: Color(0xFFC9DAE2),
+        accentColor: Color(0xFF07375D),
+      ),
+    );
+  }
 }
 
 class Inicial extends StatefulWidget {
@@ -12,18 +30,10 @@ class Inicial extends StatefulWidget {
 }
 
 class _InicialState extends State<Inicial> {
-  _logo() async {
-    await Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Logo()));
-  }
-
-  _InicialState() {
-    _logo();
-  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Logo(),
+      home: CompasdoSeuZeApp(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -93,7 +103,7 @@ class _LogoState extends State<Logo> {
           //   style: TextStyle(fontSize: 72),
           // ),
           // Center(child: Text("data")),
-          Image.asset('images/logo.jpg')
+          Image.asset('images/logo.png')
         ],
       ),
     );

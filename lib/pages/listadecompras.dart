@@ -162,13 +162,15 @@ class _ListaComprasState extends State<ListaCompras> {
                                         trailing: Text(
                                             'R\$ ${produto.total.toStringAsFixed(2)}'),
                                         subtitle: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
                                           children: <Widget>[
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 10),
+                                              child: Text(
+                                                  'R\$ ${produto.preco.toStringAsFixed(2)}'),
+                                            ),
                                             Text(
-                                                'R\$ ${produto.preco.toStringAsFixed(2)}'),
-                                            Text(
-                                                'x${produto.qtdKg.toStringAsFixed(2)}'),
+                                                'x ${produto.qtdKg.toStringAsFixed(2)}'),
                                           ],
                                         ),
                                       ),
@@ -177,13 +179,18 @@ class _ListaComprasState extends State<ListaCompras> {
                                 ),
                               )
                             : ListTile(
-                                title: Text("Total",style: TextStyle(
-                            fontSize: 20,
-                          ),),
-                                trailing:
-                                    Text('R\$ ${total.toStringAsFixed(2)}',style: TextStyle(
-                            fontSize: 20,
-                          ),),
+                                title: Text(
+                                  "Total",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
+                                trailing: Text(
+                                  'R\$ ${total.toStringAsFixed(2)}',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                  ),
+                                ),
                               );
                       },
                     ),
@@ -247,7 +254,8 @@ class _ListaComprasState extends State<ListaCompras> {
                             Flexible(
                               child: TextFormField(
                                 controller: preco,
-                                keyboardType: TextInputType.numberWithOptions(decimal: true,signed: false),
+                                keyboardType: TextInputType.numberWithOptions(
+                                    decimal: true, signed: false),
                                 decoration: InputDecoration(
                                   contentPadding: EdgeInsets.all(8),
                                   border: UnderlineInputBorder(
@@ -257,7 +265,6 @@ class _ListaComprasState extends State<ListaCompras> {
                                         width: 10,
                                         style: BorderStyle.solid),
                                   ),
-    
                                   fillColor: Colors.white,
                                   filled: true,
                                   labelText: 'PREÇO (R\$)',
@@ -275,7 +282,8 @@ class _ListaComprasState extends State<ListaCompras> {
                             Flexible(
                               child: TextFormField(
                                 controller: qtdKg,
-                                keyboardType: TextInputType.numberWithOptions(decimal: true,signed: false),
+                                keyboardType: TextInputType.numberWithOptions(
+                                    decimal: true, signed: false),
                                 decoration: InputDecoration(
                                   contentPadding: EdgeInsets.all(8),
                                   border: UnderlineInputBorder(
