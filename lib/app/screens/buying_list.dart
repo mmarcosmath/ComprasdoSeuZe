@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../models/data.dart';
 import '../models/produto.dart';
 
-import 'components/buy_list.dart';
-import 'components/inputs.dart';
-import 'components/logo.dart';
+import '../components/buy_list.dart';
+import '../components/inputs.dart';
+import '../components/logo.dart';
 
 class BuyingList extends StatefulWidget {
   @override

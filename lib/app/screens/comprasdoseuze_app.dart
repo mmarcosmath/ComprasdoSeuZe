@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/models/data.dart';
+import '../models/data.dart';
 import '../models/produto.dart';
-import 'components/buy_list.dart';
-import 'components/inputs.dart';
+import '../components/buy_list.dart';
+import '../components/inputs.dart';
 
-import 'components/logo.dart';
+import '../components/logo.dart';
 
 class CompasdoSeuZeApp extends StatefulWidget {
   @override
