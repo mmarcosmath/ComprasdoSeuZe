@@ -2,18 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:quitandadoseuze/pages/buying_list.dart';
 
 class CustomPopupMenu extends StatelessWidget {
-  final List<Map<String, dynamic>> listScore = [
-    <String, dynamic>{"name": "marcos", "point": 22},
-    <String, dynamic>{"name": "marcos", "point": 17},
-    <String, dynamic>{"name": "marcos", "point": 8},
-    <String, dynamic>{"name": "marcos", "point": 23},
-  ];
   List<PopupMenuEntry<dynamic>> _itemBuilder(context) {
     var list = List<PopupMenuEntry<Object>>();
     list.add(
       PopupMenuItem(
         child: GestureDetector(
-          onTap: () => Navigator.push(
+          onTap: () async => await Navigator.push(
               context, MaterialPageRoute(builder: (context) => BuyingList())),
           child: Row(
             children: <Widget>[

@@ -3,15 +3,23 @@ import 'package:quitandadoseuze/models/produto.dart';
 
 class BuyList extends StatelessWidget {
   final bool buyingList;
-  final List<Produto> productList = [
-    Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
-    Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
-    Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
-    Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
-    Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
-    Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
-  ];
-  BuyList({this.buyingList = false});
+  final List<Produto> productList;
+  //  = [
+  //   Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
+  //   Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
+  //   Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
+  //   Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
+  //   Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
+  //   Produto(descricao: 'Leite', id: 1, preco: 10, qtdKg: 5, total: 50),
+  // ];
+  String get total {
+    return productList
+        .map((e) => e.total)
+        .reduce((element1, element2) => element1 + element2)
+        .toStringAsFixed(2);
+  }
+
+  BuyList({this.buyingList = false, this.productList});
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -106,7 +114,7 @@ class BuyList extends StatelessWidget {
                 fit: BoxFit.cover,
                 height: 25,
               )
-            : Text('${product.qtdKg.toStringAsFixed(0)}')
+            : null
         : Text('${product.total.toStringAsFixed(2)}');
   }
 
@@ -133,7 +141,7 @@ class BuyList extends StatelessWidget {
                 ),
               ),
               Text(
-                "R\$ XX,XX",
+                "R\$ $total",
                 style: TextStyle(
                   fontSize: 20,
                 ),
