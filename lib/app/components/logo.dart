@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/pages/components/popop_menu.dart';
+import 'popop_menu.dart';
 
 class Logo extends StatelessWidget {
   final BuildContext ctx;

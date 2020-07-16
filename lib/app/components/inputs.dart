@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/models/produto.dart';
-import 'package:quitandadoseuze/pages/components/textformfield.dart';
-
+import '../models/produto.dart';
+import 'textformfield.dart';
 import 'button_add.dart';
 
 class Inputs extends StatelessWidget {

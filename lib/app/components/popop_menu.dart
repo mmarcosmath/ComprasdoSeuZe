@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/pages/buying_list.dart';
+import '../screens/buying_list.dart';
 
 class CustomPopupMenu extends StatelessWidget {
   List<PopupMenuEntry<dynamic>> _itemBuilder(context) {

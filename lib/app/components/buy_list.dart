@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/models/produto.dart';
+import 'package:quitandadoseuze/app/components/textformfield.dart';
+import '../models/produto.dart';
+import 'custom_textformfield.dart';
 
 class BuyList extends StatelessWidget {
   final bool buyingList;
@@ -20,6 +22,65 @@ class BuyList extends StatelessWidget {
   }
 
   BuyList({this.buyingList = false, this.productList});
+  Future<void> _showEditProduct(context) async {
+    // await showDialog(
+    //   context: context,
+    //   child: Dialog(
+    //     key: UniqueKey(),
+    //     elevation: 2,
+    //     child: Container(
+    //       height: 250,
+    //       child: Column(
+    //         mainAxisAlignment: MainAxisAlignment.spaceAround,
+    //         children: [
+    //           Center(
+    //             child: Text(
+    //               "Editar",
+    //               style: TextStyle(
+    //                 fontSize: 20,
+    //               ),
+    //             ),
+    //           ),
+    //           Padding(
+    //             padding: const EdgeInsets.all(8.0),
+    //             child: TextFormFieldCustom(label: "PRODUTO"),
+    //           ),
+    //           Padding(
+    //             padding: const EdgeInsets.all(8.0),
+    //             child: Row(
+    //               key: UniqueKey(),
+    //               children: [
+    //                 TextFormFieldCustom(label: "PREÇO"),
+    //                 SizedBox(
+    //                   width: 10,
+    //                 ),
+    //                 TextFormFieldCustom(label: "QTD/KG"),
+    //               ],
+    //             ),
+    //           ),
+    //           Padding(
+    //             padding: const EdgeInsets.only(
+    //                 top: 10, bottom: 0, left: 10, right: 10),
+    //             child: Row(
+    //               key: UniqueKey(),
+    //               mainAxisAlignment: MainAxisAlignment.end,
+    //               children: [
+    //                 RaisedButton(
+    //                   onPressed: () {
+    //                     Navigator.pop(context);
+    //                   },
+    //                   child: Text("Ok"),
+    //                 ),
+    //               ],
+    //             ),
+    //           )
+    //         ],
+    //       ),
+    //     ),
+    //   ),
+    // );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -69,28 +130,16 @@ class BuyList extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(1.0),
                           child: Card(
+                            elevation: 2,
                             borderOnForeground: true,
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(8))),
                             child: ListTile(
-                              onTap: () {},
+                              onTap: () => _showEditProduct(context),
                               title: Text(product.descricao),
                               trailing: _trailling(product),
-                              subtitle: buyingList
-                                  ? null
-                                  : Row(
-                                      children: <Widget>[
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 10),
-                                          child: Text(
-                                              'R\$ ${product.preco.toStringAsFixed(2)}'),
-                                        ),
-                                        Text(
-                                            'x ${product.qtdKg.toStringAsFixed(2)}'),
-                                      ],
-                                    ),
+                              subtitle: _subtitle(product),
                             ),
                           ),
                         ),
@@ -104,6 +153,20 @@ class BuyList extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget _subtitle(Produto product) {
+    return buyingList
+        ? null
+        : Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: Text('R\$ ${product.preco.toStringAsFixed(2)}'),
+              ),
+              Text('x ${product.qtdKg.toStringAsFixed(2)}'),
+            ],
+          );
   }
 
   Widget _trailling(Produto product) {
