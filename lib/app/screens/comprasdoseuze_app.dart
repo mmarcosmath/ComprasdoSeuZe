@@ -12,11 +12,12 @@ class CompasdoSeuZeApp extends StatefulWidget {
 }
 
 class _CompasdoSeuZeAppState extends State<CompasdoSeuZeApp> {
-  List<Produto> _list = [];
+  List<Produto> list = [];
   void addToDo(Produto p) {
+    print(p.descricao);
     setState(() {
-      _list.add(p);
-      saveData(_list);
+      list.add(p);
+      saveData(list);
     });
   }
 
@@ -27,26 +28,48 @@ class _CompasdoSeuZeAppState extends State<CompasdoSeuZeApp> {
     readData().then((data) {
       setState(() {
         List tempList = json.decode(data);
-        _list = tempList.map((e) => Produto.fromMap(e)).toList();
+        list = tempList.map((e) => Produto.fromMap(e)).toList();
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    double _maxHeight() =>
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
+
+    double _maxWidth() => MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Logo(),
-            BuyList(
-              productList: _list,
+        child: Container(
+          height: _maxHeight(),
+          width: _maxWidth(),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Logo(
+                  maxHeight: _maxHeight(),
+                  buyingList: false,
+                  ctx: context,
+                ),
+                Container(
+                  height: (MediaQuery.of(context).size.height > 600)
+                      ? _maxHeight() * 0.55
+                      : _maxHeight() * 0.50,
+                  child: BuyList(
+                    buyingList: false,
+                    productList: list,
+                  ),
+                ),
+                Inputs(
+                  maxHeight: _maxHeight(),
+                  buyingList: false,
+                  add: addToDo,
+                ),
+              ],
             ),
-            Inputs(
-              add: addToDo,
-            ),
-          ],
+          ),
         ),
       ),
     );

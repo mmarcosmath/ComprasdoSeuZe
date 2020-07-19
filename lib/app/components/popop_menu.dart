@@ -20,7 +20,7 @@ class CustomPopupMenu extends StatelessWidget {
                 ),
               ),
               Text(
-                "Fazer Lista de Compras",
+                "Lista de Compras",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18,
@@ -45,7 +45,7 @@ class CustomPopupMenu extends StatelessWidget {
           width: 3,
         ),
       ),
-      color: Color(0xFFC9DAE2).withOpacity(.9),
+      color: Color(0xFFC9DAE2).withOpacity(0.9),
       itemBuilder: _itemBuilder,
       icon: Icon(
         Icons.more_vert,

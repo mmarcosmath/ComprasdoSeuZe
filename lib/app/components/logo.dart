@@ -4,7 +4,8 @@ import 'popop_menu.dart';
 class Logo extends StatelessWidget {
   final BuildContext ctx;
   final bool buyingList;
-  Logo({this.buyingList = false, this.ctx});
+  final double maxHeight;
+  Logo({this.buyingList = false, this.ctx, this.maxHeight});
   @override
   Widget build(BuildContext context) {
     Align _contentLogo() {
@@ -27,10 +28,10 @@ class Logo extends StatelessWidget {
     }
 
     return Container(
+      height: maxHeight * 0.2,
       padding: EdgeInsets.symmetric(vertical: 10),
       color: Theme.of(context).backgroundColor,
       child: Stack(
-        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             alignment: Alignment.center,

@@ -12,12 +12,11 @@ class BuyingList extends StatefulWidget {
 }
 
 class _BuyingListState extends State<BuyingList> {
-  List<Produto> _list = [];
+  List<Produto> list = [];
   void addToDo(Produto p) {
-    print(p.descricao);
     setState(() {
-      _list.add(p);
-      saveData(_list);
+      list.add(p);
+      saveData(list);
     });
   }
 
@@ -27,32 +26,40 @@ class _BuyingListState extends State<BuyingList> {
 
     readData().then((data) {
       setState(() {
-        List tempList = json.decode(data);
-        _list = tempList.map((e) => Produto.fromMap(e)).toList();
+        List tempList = json.decode(data ?? '');
+        list = tempList.map((e) => Produto.fromMap(e)).toList();
       });
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    double _maxHeight() =>
+        MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top;
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Logo(
-              buyingList: true,
-              ctx: context,
-            ),
-            BuyList(
-              buyingList: true,
-              productList: _list,
-            ),
-            Inputs(
-              buyingList: true,
-              add: addToDo,
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: ListBody(
+            children: [
+              Logo(
+                buyingList: true,
+                ctx: context,
+                maxHeight: _maxHeight(),
+              ),
+              Container(
+                height: _maxHeight() * 0.60,
+                child: BuyList(
+                  buyingList: true,
+                  productList: list,
+                ),
+              ),
+              Inputs(
+                maxHeight: _maxHeight(),
+                buyingList: true,
+                add: addToDo,
+              ),
+            ],
+          ),
         ),
       ),
     );
