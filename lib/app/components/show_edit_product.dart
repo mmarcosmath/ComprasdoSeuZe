@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/app/components/custom_textformfield.dart';
-import 'package:quitandadoseuze/app/models/produto.dart';
+import 'package:comprasdoseuze/app/components/custom_textformfield.dart';
+import 'package:comprasdoseuze/app/models/produto.dart';
 
 Future<void> showEditProduct(context, Produto p) async {
   double widthTextField = (MediaQuery.of(context).size.width > 400)

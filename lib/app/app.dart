@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:quitandadoseuze/app/data/list_products_data.dart';
+import 'package:comprasdoseuze/app/data/list_products_data.dart';
 import 'screens/comprasdoseuze_app.dart';
 
 class App extends StatelessWidget {

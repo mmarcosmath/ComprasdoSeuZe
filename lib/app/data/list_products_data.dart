@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/app/models/produto.dart';
+import 'package:comprasdoseuze/app/models/produto.dart';
 import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';

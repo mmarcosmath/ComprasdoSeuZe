@@ -1,6 +1,6 @@
 // import 'package:flutter/material.dart';
-// import 'package:quitandadoseuze/models/banco.dart';
-// import 'package:quitandadoseuze/models/produto.dart';
+// import 'package:comprasdoseuze/models/banco.dart';
+// import 'package:comprasdoseuze/models/produto.dart';
 
 // class EditaProduto extends StatefulWidget {
 //   int id;

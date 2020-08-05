@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:quitandadoseuze/app/data/list_products_data.dart';
+import 'package:comprasdoseuze/app/data/list_products_data.dart';
 import '../models/produto.dart';
 import 'textformfield.dart';
 import 'button_add.dart';

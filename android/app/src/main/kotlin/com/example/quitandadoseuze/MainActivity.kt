@@ -1,4 +1,4 @@
-package com.example.quitandadoseuze
+package com.example.comprasdoseuze
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
