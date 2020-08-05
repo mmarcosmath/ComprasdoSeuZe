@@ -1,6 +1,7 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 
-class Produto {
+class Produto with ChangeNotifier {
   int id;
   String descricao;
   double preco;

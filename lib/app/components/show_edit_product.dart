@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quitandadoseuze/app/components/custom_textformfield.dart';
 import 'package:quitandadoseuze/app/models/produto.dart';
-
-import 'custom_textformfield.dart';
 
 Future<void> showEditProduct(context, Produto p) async {
   double widthTextField = (MediaQuery.of(context).size.width > 400)
@@ -21,9 +20,9 @@ Future<void> showEditProduct(context, Produto p) async {
     label: "QTD/KG",
     text: p.qtdKg.toStringAsFixed(2),
   );
-  await showDialog(
+  await showModalBottomSheet(
     context: context,
-    builder: (context) => Dialog(
+    builder: (context) => Card(
       key: UniqueKey(),
       elevation: 2,
       child: Container(

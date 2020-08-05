@@ -36,7 +36,7 @@ class Logo extends StatelessWidget {
           Container(
             alignment: Alignment.center,
             child: Image.asset(
-              'images/logo.png',
+              'images/back.png',
               height: MediaQuery.of(context).size.height > 400 ? 120 : 70,
             ),
           ),

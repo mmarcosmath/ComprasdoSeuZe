@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quitandadoseuze/app/models/produto.dart';
 
 class TextFormFieldCustom extends StatelessWidget {
   final TextEditingController ctrl = TextEditingController();

@@ -1,38 +1,9 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import '../models/data.dart';
-import '../models/produto.dart';
 import '../components/buy_list.dart';
 import '../components/inputs.dart';
 import '../components/logo.dart';
 
-class CompasdoSeuZeApp extends StatefulWidget {
-  @override
-  _CompasdoSeuZeAppState createState() => _CompasdoSeuZeAppState();
-}
-
-class _CompasdoSeuZeAppState extends State<CompasdoSeuZeApp> {
-  List<Produto> list = [];
-  void addToDo(Produto p) {
-    print(p.descricao);
-    setState(() {
-      list.add(p);
-      saveData(list);
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-
-    readData().then((data) {
-      setState(() {
-        List tempList = json.decode(data);
-        list = tempList.map((e) => Produto.fromMap(e)).toList();
-      });
-    });
-  }
-
+class CompasdoSeuZeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double _maxHeight() =>
@@ -58,14 +29,13 @@ class _CompasdoSeuZeAppState extends State<CompasdoSeuZeApp> {
                       ? _maxHeight() * 0.55
                       : _maxHeight() * 0.50,
                   child: BuyList(
+                    key: UniqueKey(),
                     buyingList: false,
-                    productList: list,
                   ),
                 ),
                 Inputs(
                   maxHeight: _maxHeight(),
                   buyingList: false,
-                  add: addToDo,
                 ),
               ],
             ),
