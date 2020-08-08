@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_textformfield.dart';
+import 'textformfield.dart';
 
 Future<void> addSaldo(context) async {
   await showDialog(
@@ -19,9 +19,14 @@ Future<void> addSaldo(context) async {
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: TextFormFieldCustom(
+          child: TextFieldCustom(
             label: "SALDO",
             text: '',
+            prefixText: "R\$",
+            keyboardType: TextInputType.numberWithOptions(
+              decimal: true,
+              signed: false,
+            ),
           ),
         ),
         Padding(

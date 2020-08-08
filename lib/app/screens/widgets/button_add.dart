@@ -7,13 +7,14 @@ class ButtonAdd extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return Container(
       height: 60,
       width: 60,
       decoration: BoxDecoration(
         border: Border.all(
           width: 3,
-          color: Theme.of(context).primaryColor,
+          color: theme.primaryColor,
         ),
         shape: BoxShape.circle,
         color: Color(0xFF111D7F),
@@ -21,7 +22,7 @@ class ButtonAdd extends StatelessWidget {
       child: Icon(
         Icons.add,
         size: 50,
-        color: Theme.of(context).primaryColor,
+        color: theme.primaryColor,
       ),
     );
   }
