@@ -1,6 +1,5 @@
+import 'package:comprasdoseuze/app/models/produto.dart';
 import 'package:flutter/material.dart';
-
-import '../../models/produto.dart';
 import 'textformfield.dart';
 
 Future<void> showEditProduct(context, Produto p) async {

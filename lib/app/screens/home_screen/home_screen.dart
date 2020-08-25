@@ -1,8 +1,8 @@
-import '../../screens/widgets/drawer.dart';
+import 'package:comprasdoseuze/app/screens/widgets/drawer.dart';
+import 'package:comprasdoseuze/app/screens/widgets/logo.dart';
 import 'package:flutter/material.dart';
 import 'widgets/buy_list.dart';
 import 'widgets/inputs.dart';
-import '../../screens/widgets/logo.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

@@ -1,8 +1,8 @@
+import 'package:comprasdoseuze/app/data/list_products_data.dart';
+import 'package:comprasdoseuze/app/models/produto.dart';
+import 'package:comprasdoseuze/app/screens/widgets/show_modal.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../data/list_products_data.dart';
-import '../../../models/produto.dart';
-import '../../widgets/show_modal.dart';
 
 class ItemListProduct extends StatelessWidget {
   const ItemListProduct({

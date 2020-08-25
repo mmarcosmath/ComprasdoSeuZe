@@ -1,7 +1,7 @@
+import 'package:comprasdoseuze/app/data/list_products_data.dart';
+import 'package:comprasdoseuze/app/screens/widgets/add_saldo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../data/list_products_data.dart';
-import '../../widgets/add_saldo.dart';
 import 'item_list.dart';
 
 class BuyList extends StatelessWidget {

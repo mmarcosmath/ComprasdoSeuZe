@@ -1,4 +1,4 @@
-import '../../utils/routes.dart';
+import 'package:comprasdoseuze/app/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {

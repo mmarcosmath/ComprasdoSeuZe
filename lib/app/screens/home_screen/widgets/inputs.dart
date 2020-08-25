@@ -1,9 +1,9 @@
+import 'package:comprasdoseuze/app/data/list_products_data.dart';
+import 'package:comprasdoseuze/app/models/produto.dart';
+import 'package:comprasdoseuze/app/screens/widgets/button_add.dart';
+import 'package:comprasdoseuze/app/screens/widgets/textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../data/list_products_data.dart';
-import '../../../models/produto.dart';
-import '../../widgets/textformfield.dart';
-import '../../widgets/button_add.dart';
 
 class Inputs extends StatelessWidget {
   final descricao = TextFieldCustom(
